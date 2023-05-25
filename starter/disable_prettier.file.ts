@@ -15,8 +15,8 @@ function main(path: string, helpers: {
   }
 
   if (!content) {
-    helpers.write(target, JSON.stringify(settings))
+    helpers.write(target, JSON.stringify(settings, null, 2))
   } else {
-    helpers.write(target, merge(settings, content))
+    helpers.write(target, JSON.stringify(merge(settings, content)), null, 2)
   }
 }
