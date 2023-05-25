@@ -17,6 +17,7 @@ function main(path: string, helpers: {
   if (!content) {
     helpers.write(target, JSON.stringify(settings, null, 2))
   } else {
-    helpers.write(target, JSON.stringify(merge(settings, JSON.parse(content))), null, 2)
+    const fileContent = merge(settings, JSON.parse(content))
+    helpers.write(target, JSON.stringify(fileContent, null, 2))
   }
 }
