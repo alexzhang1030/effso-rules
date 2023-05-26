@@ -14,10 +14,10 @@ function main(path: string, helpers: {
    "editor.formatOnSave": false
   }
 
-  if (!content) {
+  if (!content || !content.trim().length) {
     helpers.write(target, JSON.stringify(settings, null, 2))
   } else {
-    const fileContent = merge(settings, JSON.parse(content))
+    const fileContent = helpers.merge(settings, JSON.parse(content))
     helpers.write(target, JSON.stringify(fileContent, null, 2))
   }
 }
