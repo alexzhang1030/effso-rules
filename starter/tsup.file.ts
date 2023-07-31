@@ -5,7 +5,7 @@ function main(
     write: (path: string, content: string) => void;
   }
 ) {
-  const target = `${path}/uno.config.ts`;
+  const target = `${path}/tsup.config.ts`;
   const content = helpers.read(target);
   if (!content) {
     helpers.write(
