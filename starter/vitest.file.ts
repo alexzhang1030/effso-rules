@@ -1,11 +1,16 @@
-function main(path: string, helpers: {
-  read: (path: string) => string
-  write: (path: string, content: string) => void
-}) {
-  const target = `${path}/tsup.config.ts`
-  const content = helpers.read(target)
+function main(
+  path: string,
+  helpers: {
+    read: (path: string) => string;
+    write: (path: string, content: string) => void;
+  }
+) {
+  const target = `${path}/vitest.config.ts`;
+  const content = helpers.read(target);
   if (!content) {
-    helpers.write(target, `
+    helpers.write(
+      target,
+      `
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
@@ -13,6 +18,7 @@ export default defineConfig({
     includeSource: ['src/*'],
     globals: true,
   },
-})`)}
+})`
+    );
+  }
 }
-
