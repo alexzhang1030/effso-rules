@@ -4,7 +4,7 @@ function main(pkg: Record<string, any>) {
     scripts: {
       ...pkg.scripts,
       lint: "eslint .",
-      postinstall: "simple-git-hooks",
+      prepare: "simple-git-hooks",
     },
     "simple-git-hooks": {
       "pre-commit": "pnpm exec lint-staged",
