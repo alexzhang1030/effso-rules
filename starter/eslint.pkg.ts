@@ -10,7 +10,7 @@ function main(pkg: Record<string, any>) {
       "pre-commit": "pnpm exec lint-staged",
     },
     "lint-staged": {
-      "*.{js,ts,json,md,yaml,yml}": ["eslint --fix"],
+      "*": ["eslint --fix"],
     },
   };
 }
